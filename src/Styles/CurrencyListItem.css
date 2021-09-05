@@ -1,0 +1,30 @@
+.CurrencyListItem {
+  width: 100%;
+  padding: 2em;
+  border-bottom: 1px solid #eee;
+}
+
+.CurrencyListItem h2 {
+  margin: 0 0 0 1em;
+  padding: 0;
+  color: #00497b;
+}
+
+.CurrencyListItem .CurrencyName {
+  margin: 0;
+  padding: 0;
+  color: #999;
+  text-align: right;
+}
+
+.CurrencyListItem .CurrencyExchangeRate {
+  font-size: 30px;
+  color: #ed5565;
+  margin: 0;
+  text-align: right;
+}
+
+.CurrencyListItem .CurrencyExchangeRate > span {
+  font-size: 24px;
+  margin: 0;
+}

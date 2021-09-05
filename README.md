@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Currency search page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+entry file: index.js<br>
 
-## Available Scripts
+## Structure
 
-In the project directory, you can run:
+### Containers
 
-### `yarn start`
+> Bigges chunks of the app. mainly "pages" that can be plugged into the router<br>
+> Containers are allowed to react to the reduz store and dispatch actions<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Sections
+> Sections are parts/blocks of the Container<br>
+> Sections are allowed to reach to the redux store and dispatch actions on their own
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Components
 
-### `yarn test`
+#### Simple
+> Simplest/atomic components, that can be reused where ever<br>
+> Simple components are not allowed to reach to the redux, nor do anything on their own
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### LayoutComponents
+> Simple components, usualy just a wrappers around its children<br>
+> Solving only the layout structure of the page<br>
+> Layout components are not allowed to reach to the redux, nor do anything on their own
 
-### `yarn build`
+#### Compound
+> Components that are allowed to know bussiness logic and structure of data objects of the app. but are not allowed to reach to the redux, nor do anything on their own
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Hooks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There are two custom hooks
 
-### `yarn eject`
+### useFilteredCurrencies
+> handles filtering of the currencies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### useUrlHash
+> takes care of URL hash, updates it, and updating state based on url change<br>
+> it is Single source of througth for mapping state <=> URL
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Redux
+redux has only two slices:
+### currenciesSlice
+> uses API: config.currenciesConfig.API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### countriesSlice
+> uses API: config.countriesConfig.API
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

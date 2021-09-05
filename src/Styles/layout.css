@@ -1,0 +1,31 @@
+html, body, h1{
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+.FlexColumn { display: flex; flex-direction: column; }
+.FlexColumn.full-width { width: 100%; }
+.FlexColumn.align-children-left { align-items: flex-start; }
+.FlexColumn.align-children-right { align-items: flex-end; }
+.FlexColumn.align-children-center { align-items: center; }
+
+.FlexRow { display: flex; flex-direction: row; align-items: center; }
+.FlexRow.align-children-start { justify-content: flex-start; }
+.FlexRow.align-children-end { justify-content: flex-end; }
+.FlexRow.align-children-center { justify-content: center; }
+.FlexRow.align-children-space-between { justify-content: space-between; }
+
+.Container {
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+}
+
+.StickyContainer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}

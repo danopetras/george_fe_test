@@ -1,0 +1,15 @@
+.Message {
+  padding: 1em;
+  background-color: #bce4fa;
+  border-radius: 2em;
+  color: #00497b;
+}
+
+.Message button {
+  padding: 1em;
+  border-radius: 2em;
+  border: none;
+  background-color: white;
+  color: #00497b;
+  cursor: pointer;
+}
